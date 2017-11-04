@@ -1,0 +1,17 @@
+# This file managed by Chef, changes will be overwritten.
+
+<% if @comment -%>
+# <%= @comment %>
+<% end -%>
+
+<% if @environment -%>
+<% @environment.each do |key, value| -%>
+<%= key %>=<%= value %>
+<% end -%>
+<% end -%>
+
+<% if @predefined_value -%>
+<%= @predefined_value %> <%= @user %> <%= @command %>
+<% else -%>
+<%= @minute || '*' %> <%= @hour || '*' %> <%= @day || '*' %> <%= @month || '*' %> <%= @weekday || '*' %> <%= @user %> <%= @command %>
+<% end -%>
