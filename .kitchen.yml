@@ -15,3 +15,20 @@ suites:
     run_list:
     - recipe[cas_cron::default]
     attributes: 
+      cas_cron:
+        jobs:
+          test1:
+            environment:
+              HOME: '/var/www/html/'
+              PATH: '/sbin:/bin:/usr/sbin:/usr/bin'
+            predefined_value: '@weekly'
+            user: 'root'
+            command: '/bin/true'
+          test2:
+            comment: "This is a test comment"
+            minute: 1
+            hour: 2
+            day: 3
+            month: 4
+            user: 'root'
+            command: '/bin/false'
