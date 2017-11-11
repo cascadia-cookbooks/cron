@@ -13,7 +13,7 @@ platforms:
 suites:
   - name: default
     run_list:
-    - recipe[cas_cron::default]
+      - recipe[cas_cron::default]
     attributes: 
       cas_cron:
         jobs:
